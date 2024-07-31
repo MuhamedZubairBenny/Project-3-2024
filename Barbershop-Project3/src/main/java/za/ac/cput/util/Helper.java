@@ -28,9 +28,10 @@ public class Helper {
         return UUID.randomUUID().toString();
     }
 
-    public static boolean emailIsValid(String emailAddress, String regexPattern) {
-        return Pattern.compile(regexPattern)
-                .matcher(emailAddress)
-                .matches();
+    public static boolean emailIsValid(String email) {
+        Pattern regexPattern = Pattern.compile(
+                "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$"
+        );
+        return regexPattern.matcher(email).matches();
     }
 }
