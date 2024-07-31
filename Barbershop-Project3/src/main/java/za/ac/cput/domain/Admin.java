@@ -1,8 +1,12 @@
 package za.ac.cput.domain;
 
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
+@Entity
 public class Admin {
+    @Id
     public String admin_id;
     private String username;
     private String password;
