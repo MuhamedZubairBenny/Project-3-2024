@@ -28,6 +28,9 @@ public class BarberServiceImpl implements BarberService{
     }
 
     @Override
+    public void delete(String id) {repository.deleteById(id);}
+
+    @Override
     public List<Barber> getall() {
         return repository.findAll();
     }
