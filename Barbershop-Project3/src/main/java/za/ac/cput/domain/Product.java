@@ -1,8 +1,12 @@
 package za.ac.cput.domain;
 
-import java.util.Objects;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+import java.util.Objects;
+@Entity
 public class Product {
+    @Id
     public String productId;
     private String productName;
     private String productDescription;
