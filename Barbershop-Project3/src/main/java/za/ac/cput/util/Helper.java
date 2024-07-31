@@ -1,8 +1,5 @@
 package za.ac.cput.util;
 
-import java.util.UUID;
-import java.util.regex.Pattern;
-
 public class Helper {
     public static boolean isNullOrEmpty(String s) {
         if (s == null || s.isEmpty())
