@@ -24,6 +24,14 @@ public class Helper {
         return false;
     }
 
+    public static boolean dateIsValid(LocalDate date) {
+        return date != null && !date.isBefore(LocalDate.now());
+    }
+
+    public static boolean timeIsValid(LocalTime time) {
+        return time != null;
+    }
+
     public static String generateId() {
         return UUID.randomUUID().toString();
     }
@@ -33,13 +41,5 @@ public class Helper {
                 "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$"
         );
         return regexPattern.matcher(email).matches();
-    }
-
-    public static boolean dateIsValid(LocalDate date) {
-        return date != null && !date.isBefore(LocalDate.now());
-    }
-
-    public static boolean timeIsValid(LocalTime time) {
-        return time != null;
     }
 }
