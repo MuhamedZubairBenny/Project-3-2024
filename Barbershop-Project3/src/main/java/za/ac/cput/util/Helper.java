@@ -1,5 +1,7 @@
 package za.ac.cput.util;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
@@ -22,7 +24,13 @@ public class Helper {
         return false;
     }
 
+    public static boolean dateIsValid(LocalDate date) {
+        return date != null && !date.isBefore(LocalDate.now());
+    }
 
+    public static boolean timeIsValid(LocalTime time) {
+        return time != null;
+    }
 
     public static String generateId() {
         return UUID.randomUUID().toString();
