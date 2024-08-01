@@ -15,15 +15,15 @@ public class Barber {
     private String specialization;
     private String phoneNum;
 
-    public Barber(){}
+    protected Barber(){}
 
     public Barber(Builder builder){
-        this.id = id;
-        this.username = username;
-        this.name = name;
-        this.password =  password;
-        this.specialization = specialization;
-        this.phoneNum = phoneNum;
+        this.id = builder.id;
+        this.username = builder.username;
+        this.name = builder.name;
+        this.password =  builder.password;
+        this.specialization = builder.specialization;
+        this.phoneNum = builder.phoneNum;
     }
 
     public String getId() {
