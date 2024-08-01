@@ -17,7 +17,7 @@ class AppointmentFactoryTest {
     @Test
     @Order(1)
     void buildAppointment() {
-        LocalDate date = LocalDate.of(2024, 7, 31);
+        LocalDate date = LocalDate.of(2024, 10, 31);
         LocalTime time = LocalTime.of(14, 00);
         Appointment appointment = AppointmentFactory.buildAppointment("001", "012 345 6789", "100", "01", date, time);
         assertNotNull(appointment);
@@ -27,7 +27,7 @@ class AppointmentFactoryTest {
     @Test
     @Order(2)
     void testBuildAppointment() {
-        LocalDate date = LocalDate.of(2024, 8, 1);
+        LocalDate date = LocalDate.of(2024, 10, 1);
         LocalTime time = LocalTime.of(12, 00);
         Appointment appointment = AppointmentFactory.buildAppointment("987 654 3210", "101", "02", date, time);
         assertNotNull(appointment);
@@ -37,7 +37,7 @@ class AppointmentFactoryTest {
     @Test
     @Order(3)
     void buildAppointmentWithFail() {
-        LocalDate date = LocalDate.of(2024, 8, 1);
+        LocalDate date = LocalDate.of(2024, 10, 1);
         LocalTime time = LocalTime.of(12, 00);
         Appointment appointment = AppointmentFactory.buildAppointment("","987 654 3210", "101", "02", date, time);
         assertNotNull(appointment);

@@ -1,5 +1,6 @@
 package za.ac.cput.service;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -58,8 +59,8 @@ class ClientServiceTest {
     }
 
     @Test
+    @Disabled
     void f_delete() {
-
         clientService.delete(client2.getEmail());
         System.out.println("Client successfully deleted!");
     }

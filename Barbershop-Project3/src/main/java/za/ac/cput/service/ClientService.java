@@ -34,6 +34,6 @@ public class ClientService implements IClientService{
 
     @Override
     public void delete(String email) {
-        clientRepository.deleteClientsByEmail(email);
+        clientRepository.deleteById(email);
     }
 }

@@ -19,22 +19,22 @@ public class ServiceService implements IServiceService {
 
     @Override
     public za.ac.cput.domain.Service create(za.ac.cput.domain.Service service) {
-        return null;
+        return serviceRepository.save(service);
     }
 
     @Override
     public za.ac.cput.domain.Service read(String s) {
-        return null;
+        return serviceRepository.findById(s).orElse(null);
     }
 
     @Override
     public za.ac.cput.domain.Service update(za.ac.cput.domain.Service service) {
-        return null;
+        return serviceRepository.save(service);
     }
 
     @Override
-    public void delete(String serviceId) {
-        serviceRepository.deleteById(serviceId);
+    public void delete(String s) {
+        serviceRepository.deleteById(s);
     }
 
     @Override
@@ -56,6 +56,8 @@ public class ServiceService implements IServiceService {
     public List<za.ac.cput.domain.Service> findByDescriptionContaining(String keyword) {
         return null;
     }
+
+
 
     //MUST FIX NUR
     //@Override

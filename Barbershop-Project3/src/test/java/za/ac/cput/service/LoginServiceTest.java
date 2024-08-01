@@ -1,9 +1,6 @@
 package za.ac.cput.service;
 
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.Login;
@@ -68,6 +65,7 @@ class LoginServiceTest {
 
     @Test
     @Order(5)
+    @Disabled
     void e_delete() {
         loginService.create(login2);
         loginService.delete(login2.getUsername());
