@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointments</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: #262626;">
+<h1 th:text="${heading}" class="text-center" style="color:white"/>
+<img th:src="@{/images/Comb.png}" alt="Barbershop logo" class="img-fluid mx-auto d-block">
+<div class="paymentDates" >
+    <div class="row justify-content-center">
+        <div class="filterFromDates">
+            <label for="filterFrom">Filter from:</label>
+            <select id="filterFrom" class="form-control">
+                <option value="" selected>Select a date</option>
+                <option value="2024-08-01">2024-08-01</option>
+                <option value="2024-10-01">2024-10-01</option>
+                <option value="2024-01-01">2024-01-01</option>
+            </select>
+
+        </div>
+        <div class="filterToDates">
+            <label for="filterTo">Filter to:</label>
+            <select id="filterTo" class="form-control">
+                <option value="" selected>Select a date</option>
+                <option value="2024-12-01">2024-12-01</option>
+                <option value="2024-11-01">2024-11-01</option>
+                <option value="2025-01-01">2025-01-01</option>
+            </select>
+        </div>
+    </div>
+</div>
+<table class="table table-secondary table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Appointment Id</th>
+        <th scope="col">Client Phonenumber</th>
+        <th scope="col">Service Id</th>
+        <th scope="col">Barber Id</th>
+        <th scope="col">Appointment Date</th>
+        <th scope="col">Appointment Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="appointment: ${appointment}">
+        <td th:text="${appointment.appointment_Id}"/>
+        <td th:text="${appointment.client_phoneNumber}"/>
+        <td th:text="${appointment.service_id}"/>
+        <td th:text="${appointment.barber_id}"/>
+        <td th:text="${appointment.appointment_date}"/>
+        <td th:text="${appointment.appointment_time}"/>
+    </tr>
+    </tbody>
+
+</table>
+</body>
+</html>
