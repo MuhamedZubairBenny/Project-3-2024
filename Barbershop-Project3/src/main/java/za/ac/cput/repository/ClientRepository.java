@@ -5,8 +5,10 @@ import org.springframework.stereotype.Repository;
 import za.ac.cput.domain.Client;
 
 @Repository
-public interface ClientRepository extends JpaRepository<Client, String> {
-    Client findClientByEmail(String email);
+public interface ClientRepository extends JpaRepository<Client, Long> {
+
+    boolean existsByUsernameAndPasswordAndUserType(String username, String password, String userType);
+    Client findClientByUsername(String username);
     void deleteClientByEmail(String email);
     void deleteClientsByEmail(String email);
 

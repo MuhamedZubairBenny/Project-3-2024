@@ -1,39 +1,15 @@
 package za.ac.cput.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import za.ac.cput.domain.Client;
-import za.ac.cput.repository.ClientRepository;
 
 import java.util.List;
 
-@Service
-public class ClientService implements IClientService{
-    private ClientRepository clientRepository;
-    @Autowired
-    public ClientService(ClientRepository clientRepository) {this.clientRepository = clientRepository;}
+public interface ClientService extends IService <Client, Long> {
 
-    @Override
-    public Client create(Client client) {
-        return clientRepository.save(client);
-    }
+    List<Client> getAll();
 
-    @Override
-    public Client read(String email) {
-        return clientRepository.findClientByEmail(email);
-    }
+    boolean validateLogin(String username, String password, String userType);
 
-    @Override
-    public Client update(Client client) {
-        return clientRepository.save(client);
-    }
-    @Override
-    public List<Client> getAll() {
-        return clientRepository.findAll();
-    }
+    Client getClientByUsername(String username);
 
-    @Override
-    public void delete(String email) {
-        clientRepository.deleteById(email);
-    }
 }
