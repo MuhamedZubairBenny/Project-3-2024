@@ -22,13 +22,10 @@ public class PaymentFactory {
                 .build();
     }
     public static Payment buildPayment(String paymentDescription, LocalDate paymentDate, int paymentAmount){
-       if (Helper.isNullOrEmpty(paymentDescription) )
+       if (Helper.isNullOrEmpty(paymentDescription) ||  !Helper.dateIsValid(paymentDate) )
             return null;
         if (paymentAmount < 0)
             return null;
-        if ( paymentDate == LocalDate.now())
-            return null;
-
  String paymentId = Helper.generateId();
 
         return new Payment.Builder().setPaymentId(paymentId)

@@ -12,7 +12,7 @@ class PaymentFactoryTest {
 
     @Test
     void buildPayment() {
-        LocalDate paymentDate = LocalDate.parse("2024-07-31");
+        LocalDate paymentDate = LocalDate.of(2024, 10, 31);
 
         Payment payment= new PaymentFactory().buildPayment("A1","haircut and Trim",paymentDate,150);
         assertNotNull(payment);
@@ -21,7 +21,7 @@ class PaymentFactoryTest {
 
     @Test
     void testBuildPayment() {
-        LocalDate paymentDate = LocalDate.parse("2024-07-31");
+        LocalDate paymentDate = LocalDate.of(2024, 10, 31);
 
         Payment payment= new PaymentFactory().buildPayment("A1",paymentDate,150);
         assertNotNull(payment);
@@ -29,8 +29,8 @@ class PaymentFactoryTest {
     }
     @Test
     void testBuildPaymentFail() {
-        //Testing with wrong date format
-        LocalDate paymentDate = LocalDate.parse("2024/07-31");
+        //Testing with invalid date
+        LocalDate paymentDate = LocalDate.of(2024, 13, 31);
 
         Payment payment= new PaymentFactory().buildPayment("A2","A1",paymentDate,150);
         assertNotNull(payment);
