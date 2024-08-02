@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Admins</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body style="background-color: #262626;">
+<h1 th:text="${heading}" class="text-center" style="color:white"/>
+<img th:src="@{/images/Comb.png}" alt="Barbershop logo" class="img-fluid mx-auto d-block">
+<table class="table table-secondary table-striped">
+    <thead>
+        <tr>
+            <th scope="col">AdminId</th>
+            <th scope="col">Username</th>
+            <th scope="col">Password</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:each="admin: ${admin}">
+        <td th:text="${admin.admin_id}"/>
+        <td th:text="${admin.username}"/>
+        <td th:text="${admin.password}"/>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
