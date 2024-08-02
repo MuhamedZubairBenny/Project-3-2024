@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class AppointmentController {
     @GetMapping
     String getAppointment(Model model) {
-        model.addAttribute("heading","Appointments");
+        model.addAttribute("heading","Schedule");
         model.addAttribute("appointment", Arrays.asList(
                 AppointmentFactory.buildAppointment("001","012 345 6789","01","100", LocalDate.of(2024,12,1), LocalTime.of(8,00)),
                 AppointmentFactory.buildAppointment("002","012 345 9876","02","101", LocalDate.of(2024,12,1), LocalTime.of(9,00)),

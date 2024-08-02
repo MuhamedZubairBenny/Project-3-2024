@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang= "eng" xmlns:th="https://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
-    <title>Appointments</title>
+    <title>Schedule</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&display=swap">
 </head>
-<body style="background-color: #262626;">
+<style>
+    body {
+        background-color: #262626;
+    }
+    h1 {
+        color: white;
+        font-family: 'Bungee', cursive;
+    }
+</style>
+<body>
 <h1 th:text="${heading}" class="text-center" style="color:white"/>
-<img th:src="@{/images/Comb.png}" alt="Barbershop logo" class="img-fluid mx-auto d-block">
+<img th:src="@{/images/Logo.png}" alt="Barbershop logo" class="img-fluid mx-auto d-block">
 <div class="paymentDates" >
     <div class="row justify-content-center">
         <div class="filterFromDates">
@@ -31,28 +41,36 @@
         </div>
     </div>
 </div>
-<table class="table table-secondary table-striped">
-    <thead>
-    <tr>
-        <th scope="col">Appointment Id</th>
-        <th scope="col">Client Phonenumber</th>
-        <th scope="col">Service Id</th>
-        <th scope="col">Barber Id</th>
-        <th scope="col">Appointment Date</th>
-        <th scope="col">Appointment Time</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="appointment: ${appointment}">
-        <td th:text="${appointment.appointment_Id}"/>
-        <td th:text="${appointment.client_phoneNumber}"/>
-        <td th:text="${appointment.service_id}"/>
-        <td th:text="${appointment.barber_id}"/>
-        <td th:text="${appointment.appointment_date}"/>
-        <td th:text="${appointment.appointment_time}"/>
-    </tr>
-    </tbody>
-
-</table>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <table class="table table-secondary table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Appointment Id</th>
+                    <th scope="col">Client Phonenumber</th>
+                    <th scope="col">Service Id</th>
+                    <th scope="col">Barber Id</th>
+                    <th scope="col">Appointment Date</th>
+                    <th scope="col">Appointment Time</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="appointment: ${appointment}">
+                    <td th:text="${appointment.appointment_Id}"></td>
+                    <td th:text="${appointment.client_phoneNumber}"></td>
+                    <td th:text="${appointment.service_id}"></td>
+                    <td th:text="${appointment.barber_id}"></td>
+                    <td th:text="${appointment.appointment_date}"></td>
+                    <td th:text="${appointment.appointment_time}"></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="text-center mt-3">
+                <button type="button" class="btn btn-secondary">Edit Schedule</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
