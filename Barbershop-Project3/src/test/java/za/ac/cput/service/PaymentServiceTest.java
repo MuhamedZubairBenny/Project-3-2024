@@ -26,11 +26,11 @@ private static Payment payment2;
 
     @Test
     void a_setup() {
-        LocalDate paymentDate1 = LocalDate.parse("2024-07-31");
+        LocalDate paymentDate1 = LocalDate.of(2024, 10, 31);
         payment1= new PaymentFactory().buildPayment("A1","haircut and Trim",paymentDate1,150);
         assertNotNull(payment1);
 
-        LocalDate paymentDate2 = LocalDate.parse("2024-08-05");
+        LocalDate paymentDate2 = LocalDate.of(2024, 05, 12);
         payment2= new PaymentFactory().buildPayment("A2", "Trim",paymentDate2,90);
         assertNotNull(payment2);
     }
