@@ -8,11 +8,20 @@
 </head>
 <style>
     body {
-        background-color: #262626;
+        background-color: black;
     }
     h1 {
         color: white;
         font-family: 'Bungee', cursive;
+    }
+    .custom-label {
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+    .custom-label:first-of-type {
+        margin-bottom: 16px;
     }
 </style>
 <body>
@@ -21,7 +30,7 @@
 <div class="paymentDates" >
     <div class="row justify-content-center">
         <div class="filterFromDates">
-            <label for="filterFrom">Filter from:</label>
+            <label for="filterFrom" class="custom-label">Filter from:</label>
             <select id="filterFrom" class="form-control">
                 <option value="" selected>Select a date</option>
                 <option value="2024-08-01">2024-08-01</option>
@@ -31,7 +40,7 @@
 
         </div>
         <div class="filterToDates">
-            <label for="filterTo">Filter to:</label>
+            <label for="filterFrom" class="custom-label">Filter from:</label>
             <select id="filterTo" class="form-control">
                 <option value="" selected>Select a date</option>
                 <option value="2024-12-01">2024-12-01</option>
