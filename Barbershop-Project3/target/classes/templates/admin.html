@@ -1,30 +1,45 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org/">
+<html lang= "eng" xmlns:th="https://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
     <title>Admins</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&display=swap">
 
 </head>
-<body style="background-color: #262626;">
+<style>
+    body {
+        background-color: #262626;
+    }
+    h1 {
+        color: white;
+        font-family: 'Bungee', cursive;
+    }
+</style>
+<body>
 <h1 th:text="${heading}" class="text-center" style="color:white"/>
-<img th:src="@{/images/Comb.png}" alt="Barbershop logo" class="img-fluid mx-auto d-block">
-<table class="table table-secondary table-striped">
-    <thead>
-        <tr>
-            <th scope="col">AdminId</th>
-            <th scope="col">Username</th>
-            <th scope="col">Password</th>
-        </tr>
-    </thead>
-    <tbody>
-    <tr th:each="admin: ${admin}">
-        <td th:text="${admin.admin_id}"/>
-        <td th:text="${admin.username}"/>
-        <td th:text="${admin.password}"/>
-    </tr>
-    </tbody>
-</table>
-
+<img th:src="@{/images/Logo.png}" alt="Barbershop logo" class="img-fluid mx-auto d-block">
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <table class="table table-secondary table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">AdminId</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Password</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="admin: ${admin}">
+                    <td th:text="${admin.admin_id}"></td>
+                    <td th:text="${admin.username}"></td>
+                    <td th:text="${admin.password}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
 </html>
