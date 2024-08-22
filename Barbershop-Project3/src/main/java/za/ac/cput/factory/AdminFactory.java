@@ -5,8 +5,15 @@ import za.ac.cput.util.Helper;
 
 public class AdminFactory {
     public static Admin buildAdmin (String admin_id, String username, String password){
-        if (Helper.isNullOrEmpty(admin_id) || Helper.isNullOrEmpty(username) || Helper.isNullOrEmpty(password))
-            return null;
+        if (Helper.isNullOrEmpty(admin_id)){
+            throw new IllegalArgumentException("Admin ID cannot be null or empty");
+        }
+        if (Helper.isNullOrEmpty(username)){
+            throw new IllegalArgumentException("Username cannot be null or empty");
+        }
+        if (Helper.isNullOrEmpty(password)){
+            throw new IllegalArgumentException("Password cannot be null or empty");
+        }
 
         return new Admin.Builder().setAdmin_id(admin_id)
                 .setUsername(username)
@@ -15,8 +22,13 @@ public class AdminFactory {
     }
 
     public static Admin buildAdmin (String username, String password){
-        if (Helper.isNullOrEmpty(username) || Helper.isNullOrEmpty(password))
-            return null;
+        if (Helper.isNullOrEmpty(username)){
+            throw new IllegalArgumentException("Username cannot be null or empty");
+        }
+        if (Helper.isNullOrEmpty(password)){
+            throw new IllegalArgumentException("Password cannot be null or empty");
+        }
+
         String admin_id = Helper.generateId();
 
         return new Admin.Builder().setAdmin_id(admin_id)

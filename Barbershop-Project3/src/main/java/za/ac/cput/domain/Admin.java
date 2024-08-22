@@ -11,7 +11,7 @@ public class Admin {
     private String username;
     private String password;
 
-    protected Admin() {}
+    public Admin() {}
 
     public Admin(Builder builder){
         this.admin_id = builder.admin_id;

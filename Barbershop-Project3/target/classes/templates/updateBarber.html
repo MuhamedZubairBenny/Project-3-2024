@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <title>Update Barber</title>
+    <style>
+        body {
+            background-color: black; /* Set page background color to black */
+        }
+        .content-box {
+            background-color: black; /* Set background color to black */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .custom-btn-dark {
+            background-color: #262626 !important; /* Custom dark color */
+            border-color: #262626 !important; /* Ensures border matches background */
+            color: white; /* Text color */
+        }
+        /* Custom class for white text */
+        .text-white-custom {
+            color: white !important;
+        }
+        .logo-container {
+            text-align: center; /* Center the div contents */
+        }
+        .logo-image {
+            display: block; /* Make the image a block element */
+            margin: auto; /* Center the image */
+            width: 300px; /* Set the desired width */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+<img src="/images/stafflogo.png" alt="Staff Logo" class="logo-image logo-container">
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="content-box p-4">
+                <h1 class="text-center text-white-custom mb-4">Update Staff</h1>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="username" class="form-label text-white-custom">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label text-white-custom">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="barberName" class="form-label text-white-custom">Barber Name</label>
+                        <input type="text" class="form-control" id="barberName" placeholder="Enter barber name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="specialization" class="form-label text-white-custom">Specialization</label>
+                        <input type="text" class="form-control" id="specialization" placeholder="Enter specialization">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phoneNumber" class="form-label text-white-custom">Phone Number</label>
+                        <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter phone number">
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn custom-btn-dark mx-2">Confirm</button>
+                        <button type="reset" class="btn custom-btn-dark mx-2">Clear</button>
+                        <button type="reset" class="btn custom-btn-dark mx-2">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

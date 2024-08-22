@@ -1,27 +1,42 @@
 package za.ac.cput.Controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import za.ac.cput.domain.Admin;
 import za.ac.cput.factory.AdminFactory;
-import za.ac.cput.repository.AdminRepository;
 import za.ac.cput.service.AdminService;
 
-import java.util.Arrays;
-
 @Controller
-@RequestMapping("/admin")
 public class AdminController {
-    @GetMapping
-    String getAdmin(Model model) {
-        model.addAttribute("heading","Admin List");
-        model.addAttribute("admin", Arrays.asList(
-                AdminFactory.buildAdmin("01","Zubair","123"),
-                AdminFactory.buildAdmin("02","Duane","456"),
-                AdminFactory.buildAdmin("03","Isa","789")
-        ));
+    @Autowired
+    private AdminService service;
+
+    @GetMapping("/admin")
+    public String getAdmin(Model model) {
+        model.addAttribute("heading", "Admin List");
+        model.addAttribute("admin", service.getAll());
         return "admin";
+    }
+
+    @GetMapping("/admin/add")
+    public String showAddAdminForm(Model model) {
+        // Pass an empty form object
+        model.addAttribute("admin", new Admin());
+        return "admin-form"; // Return the form view name
+    }
+
+    @PostMapping("/admin/add")
+    public String addAdmin(@ModelAttribute("admin") Admin adminForm) {
+        System.out.println("Admin ID: " + adminForm.getAdmin_id());
+        System.out.println("Username: " + adminForm.getUsername());
+        System.out.println("Password: " + adminForm.getPassword());
+        // Create Admin object using the factory
+        Admin admin = AdminFactory.buildAdmin(adminForm.getAdmin_id(), adminForm.getUsername(), adminForm.getPassword());
+        service.create(admin);
+        return "redirect:/admin";
     }
 }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #908c8c;
+            color: #fff; /
+        }
+        .review-box {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .review-name {
+            font-size: 1.25rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            color: #000;
+        }
+
+        .review-star {
+            margin-left: 10px;
+        }
+
+        .review-text {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body style="background-color: #262626;">
+<h1 th:text="${heading}" class="text-center" style="color:white"/>
+<img th:src="@{/images/Comb.png}" alt="Barbershop logo" class="img-fluid mx-auto d-block">
+<div class="Review 1">
+    <div th:each="review : ${review1}" class="review-box">
+        <div class="review-name">
+            <img th:src="@{/images/vector.png}" alt="Profile Icon" class="review-icon">
+            <span th:text="${review.name}"/>
+            <img th:src="@{/images/Star.png}" alt="Rating" class="review-star">
+            <img th:src="@{/images/Star.png}" alt="Rating" class="review-star">
+            <img th:src="@{/images/Star.png}" alt="Rating" class="review-star">
+            <img th:src="@{/images/Star.png}" alt="Rating" class="review-star">
+
+        </div>
+        <div class="review-text" th:text="${review.review}"></div>
+    </div>
+    <div class="Review 2">
+    <div th:each="review : ${review2}"  class="review-box">
+        <div class="review-name">
+            <img th:src="@{/images/vector.png}" alt="Profile Icon" class="review-icon">
+            <span th:text="${review.name}"/>
+            <img th:src="@{/images/Star.png}" alt="Rating" class="review-star">
+            <img th:src="@{/images/Star.png}" alt="Rating" class="review-star">
+            <img th:src="@{/images/Star.png}" alt="Rating" class="review-star">
+            <img th:src="@{/images/Star.png}" alt="Rating" class="review-star">
+            <img th:src="@{/images/Star.png}" alt="Rating" class="review-star">
+        </div>
+        <div class="review-text" th:text="${review.review}"></div>
+    </div>
+    </div>
+    <div class="Review 3">
+    <div th:each="review : ${review3}"  class="review-box" >
+        <div class="review-name">
+            <img th:src="@{/images/vector.png}" alt="Profile Icon" class="review-icon">
+            <span th:text="${review.name}"/>
+            <img th:src="@{/images/Star.png}" alt="Rating" class="review-star">
+            <img th:src="@{/images/Star.png}" alt="Rating" class="review-star">
+        </div>
+        <div class="review-text" th:text="${review.review}"></div>
+    </div>
+</div>
+</div>
+</body>
+</html>

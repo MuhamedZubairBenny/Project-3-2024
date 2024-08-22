@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import za.ac.cput.domain.Barber;
 import za.ac.cput.factory.BarberFactory;
@@ -15,6 +16,7 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @Controller
+//@RequestMapping("/barber")
 public class BarberController {
     @Autowired
     private BarberServiceImpl service;
