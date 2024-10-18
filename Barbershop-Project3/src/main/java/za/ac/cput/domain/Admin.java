@@ -1,26 +1,25 @@
 package za.ac.cput.domain;
 
 import jakarta.persistence.*;
-
 import java.util.Objects;
 
 @Entity
 public class Admin {
     @Id
-    public String admin_id;
+    public String adminId;
     private String username;
     private String password;
 
     public Admin() {}
 
     public Admin(Builder builder){
-        this.admin_id = builder.admin_id;
+        this.adminId = builder.adminId;
         this.username = builder.username;
         this.password = builder.password;
     }
 
-    public String getAdmin_id() {
-        return admin_id;
+    public String getAdminId() {
+        return adminId;
     }
 
     public String getUsername() {
@@ -36,30 +35,30 @@ public class Admin {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Admin admin = (Admin) o;
-        return Objects.equals(admin_id, admin.admin_id) && Objects.equals(username, admin.username) && Objects.equals(password, admin.password);
+        return Objects.equals(adminId, admin.adminId) && Objects.equals(username, admin.username) && Objects.equals(password, admin.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(admin_id, username, password);
+        return Objects.hash(adminId, username, password);
     }
 
     @Override
     public String toString() {
         return "Admin{" +
-                "admin_id='" + admin_id + '\'' +
+                "admin_id='" + adminId + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
 
     public static class Builder {
-        public String admin_id;
+        public String adminId;
         private String username;
         private String password;
 
         public Builder setAdmin_id(String admin_id) {
-            this.admin_id = admin_id;
+            this.adminId = admin_id;
             return this;
         }
 
@@ -74,7 +73,7 @@ public class Admin {
         }
 
         public Builder copy(Admin admin){
-            this.admin_id = admin.admin_id;
+            this.adminId = admin.adminId;
             this.username = admin.username;
             this.password = admin.password;
             return this;

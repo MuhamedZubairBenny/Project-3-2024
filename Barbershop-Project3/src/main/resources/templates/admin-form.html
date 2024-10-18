@@ -7,11 +7,11 @@
 </head>
 <body>
 <div class="container mt-4">
-    <h1 class="text-center">Add New Admin</h1>
+    <h1 class="text-center" th:text="${admin.adminId != null ? 'Edit Admin' : 'Add New Admin'}"></h1>
     <form th:action="@{/admin/add}" th:object="${admin}" method="post">
         <div class="form-group">
-            <label for="admin_id">Admin ID</label>
-            <input type="text" class="form-control" id="admin_id" th:field="*{admin_id}" required>
+            <label for="adminId">Admin ID</label>
+            <input type="text" class="form-control" id="adminId" th:field="*{adminId}" required>
         </div>
         <div class="form-group">
             <label for="username">Username</label>
@@ -23,6 +23,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Add Admin</button>
     </form>
+
 </div>
 </body>
 </html>

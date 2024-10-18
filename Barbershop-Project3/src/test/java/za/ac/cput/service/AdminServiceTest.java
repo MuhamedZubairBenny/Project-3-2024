@@ -39,7 +39,7 @@ class AdminServiceTest {
 
     @Test
     void c_read() {
-        Admin read = adminService.read(admin1.getAdmin_id());
+        Admin read = adminService.read(admin1.getAdminId());
         assertNotNull(read);
         System.out.println(read);
     }
@@ -55,7 +55,7 @@ class AdminServiceTest {
     @Test
     @Disabled
     void e_delete() {
-        adminService.delete(admin2.getAdmin_id());
+        adminService.delete(admin2.getAdminId());
         System.out.println("Successfully deleted Admin");
     }
 
